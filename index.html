@@ -2,201 +2,151 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Focus MC - Official Website</title>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet">
+  <title>Focus MC - Official SMP Website</title>
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
     body {
-      font-family: 'Orbitron', sans-serif;
-      background: linear-gradient(45deg, #000000, #1a1a1a);
-      color: #fff;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: url('https://i.imgur.com/xDvdINZ.gif') no-repeat center center fixed;
+      background-size: cover;
+      color: white;
     }
-    header {
-      background-color: rgba(0, 0, 0, 0.85);
-      padding: 20px;
+    nav {
+      background-color: rgba(0, 0, 0, 0.8);
+      padding: 1em;
       display: flex;
       justify-content: space-between;
       align-items: center;
     }
-    header h1 {
-      font-size: 2.2em;
-      color: #00ffe1;
-    }
-    nav ul {
-      list-style-type: none;
+    nav .menu {
       display: flex;
-      flex-wrap: wrap;
-      gap: 15px;
+      gap: 20px;
     }
-    nav a {
-      color: #00ffe1;
+    nav .menu a {
+      color: white;
       text-decoration: none;
-      font-size: 1em;
-      transition: 0.3s;
     }
-    nav a:hover {
-      color: #fff;
-      text-shadow: 0 0 10px #00ffe1;
-    }
-    main {
-      flex: 1;
-      padding: 30px;
+    .main {
       text-align: center;
+      margin-top: 10vh;
     }
-    section {
-      background: rgba(0, 0, 0, 0.6);
+    .main h1 {
+      font-size: 60px;
+      margin-bottom: 10px;
+      animation: pulse 2s infinite;
+    }
+    .main p {
+      font-size: 24px;
+    }
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+    .section {
+      background: rgba(0, 0, 0, 0.7);
+      margin: 2em;
+      padding: 1.5em;
       border-radius: 12px;
-      box-shadow: 0 0 15px #00ffe1;
-      padding: 20px;
-      margin-bottom: 25px;
-    }
-    section h2 {
-      color: #00ffe1;
-      margin-bottom: 15px;
-    }
-    section p, li {
-      font-size: 1.1em;
-      color: #ccc;
     }
     footer {
-      background-color: rgba(0, 0, 0, 0.85);
+      background: rgba(0, 0, 0, 0.8);
+      padding: 1em;
       text-align: center;
-      padding: 10px;
-      font-size: 0.9em;
-    }
-    .menu-toggle {
-      display: none;
-      flex-direction: column;
-      cursor: pointer;
-    }
-    .bar {
-      height: 4px;
-      width: 25px;
-      background-color: #00ffe1;
-      margin: 4px 0;
-    }
-    @media (max-width: 768px) {
-      nav ul {
-        display: none;
-        flex-direction: column;
-        background-color: rgba(0, 0, 0, 0.95);
-        position: absolute;
-        right: 20px;
-        top: 70px;
-        padding: 20px;
-        border-radius: 10px;
-      }
-      nav ul.active {
-        display: flex;
-      }
-      .menu-toggle {
-        display: flex;
-      }
+      margin-top: 2em;
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Focus MC</h1>
-    <div class="menu-toggle" onclick="toggleMenu()">
-      <div class="bar"></div>
-      <div class="bar"></div>
-      <div class="bar"></div>
+  <nav>
+    <div><strong>FocusMC SMP</strong></div>
+    <div class="menu">
+      <a href="#">Home</a>
+      <a href="#about">About</a>
+      <a href="#rules">Rules</a>
+      <a href="#store">Store</a>
+      <a href="#faq">FAQs</a>
+      <a href="#support">Support</a>
+      <a href="#staffapply">Staff Apply</a>
+      <a href="#events">Events</a>
+      <a href="#leaderboard">Leaderboard</a>
     </div>
-    <nav>
-      <ul id="nav-menu">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#store">Store</a></li>
-        <li><a href="#about">About Us</a></li>
-        <li><a href="#leaderboard">Leaderboards</a></li>
-        <li><a href="#events">Events</a></li>
-        <li><a href="#staff">Staff Apply</a></li>
-        <li><a href="#rules">Rules</a></li>
-        <li><a href="#support">Support</a></li>
-        <li><a href="#faq">FAQ</a></li>
-      </ul>
-    </nav>
-  </header>  <main>
-    <section id="home">
-      <h2>Welcome to Focus MC</h2>
-      <p>Play to Win | No Lag | 24x7 Support | Not Pay to Win | Java + PE | 1.21+</p>
-      <p style="margin-top: 10px; color: #00ffe1;">Revealing Soon...</p>
-    </section><section id="about">
-  <h2>About Us</h2>
-  <p>FocusMC is a next-generation Minecraft server offering lag-free experience, active support, and fair gameplay for all. We believe in providing the best platform for both Java and Bedrock (PE) players to enjoy a united gaming world.</p>
-</section>
-
-<section id="leaderboard">
-  <h2>Leaderboards</h2>
-  <p>Coming Soon...</p>
-</section>
-
-<section id="events">
-  <h2>Events</h2>
-  <p>Coming Soon...</p>
-</section>
-
-<section id="staff">
-  <h2>Staff Apply</h2>
-  <p>Join our <a href="https://discord.gg/su9qyNQWKb" target="_blank" style="color:#00ffe1;">Discord Server</a> and create a ticket to apply for staff.</p>
-</section>
-
-<section id="rules">
-  <h2>Rules</h2>
-  <ul>
-    <li>No hacking or using unfair advantages.</li>
-    <li>Respect all players and staff.</li>
-    <li>No griefing or stealing.</li>
-    <li>No offensive or inappropriate builds.</li>
-    <li>Do not spam or advertise.</li>
-    <li>Keep chat clean and friendly.</li>
-    <li>Staff decisions are final.</li>
-    <li>Follow all server-specific rules.</li>
-  </ul>
-</section>
-
-<section id="support">
-  <h2>Support</h2>
-  <p>Need help? Join our <a href="https://discord.gg/72FU8cXKzg" target="_blank" style="color:#00ffe1;">Support Discord Server</a> for assistance. We're available 24/7!</p>
-</section>
-
-<section id="faq">
-  <h2>FAQ</h2>
-  <p>20 FAQs will be added here soon with full animations and dropdowns.</p>
-</section>
-
-<section id="store">
-  <h2>Store</h2>
-  <p>Purchase ranks and SMP coins securely. 100% trusted. Join support server and create a ticket to buy.</p>
-  <ul>
-    <li><strong>Mafia Rank:</strong> ₹699 - 15 Homes, 12 Auctions, 3500 Coins</li>
-    <li><strong>Devil Rank:</strong> ₹499 - 15 Homes, 12 Auctions, 2500 Coins</li>
-    <li><strong>President Rank:</strong> ₹399 - 12 Homes, 10 Auctions, 1000 Coins</li>
-    <li><strong>Minister Rank:</strong> ₹249 - 10 Homes, 8 Auctions, 600 Coins</li>
-    <li><strong>Genius Rank:</strong> ₹60/month - 3 Homes, 6 Auctions, 300 Coins</li>
-    <li><strong>Legend Rank:</strong> ₹30/month - 4 Auctions, 150 Coins</li>
-    <br>
-    <li><strong>Coins:</strong></li>
-    <li>₹50 = 1200 Coins</li>
-    <li>₹100 = 2500 Coins</li>
-    <li>₹200 = 5500 Coins</li>
-    <li>₹400 = 12000 Coins</li>
-  </ul>
-</section>
-
-  </main>  <footer>
-    &copy; 2025 FocusMC | Official Website | Join us now!
-  </footer>  <script>
-    function toggleMenu() {
-      const menu = document.getElementById("nav-menu");
-      menu.classList.toggle("active");
-    }
-  </script></body>
+  </nav>  <div class="main">
+    <h1>REVEALING SOON</h1>
+    <p>Live Countdown - Stay Tuned!</p>
+  </div>  <div class="section" id="about">
+    <h2>About FocusMC</h2>
+    <p>FocusMC is a feature-rich Minecraft SMP server that supports both Java and Bedrock players (version 1.21+). Explore, survive, and thrive in a lag-free experience with amazing community features like events, ranks, rewards, PvP, economy, and auction systems.</p>
+    <p>We host weekly events, giveaways, and have a fully functional economy and rank system. Join us and become a part of the ultimate Minecraft family!</p>
+  </div>  <div class="section" id="rules">
+    <h2>Server Rules</h2>
+    <ul>
+      <li>No hacking or cheating.</li>
+      <li>Be respectful to all players.</li>
+      <li>Don't grief or steal.</li>
+      <li>No spamming or advertising.</li>
+      <li>Use common sense and follow staff instructions.</li>
+    </ul>
+  </div>  <div class="section" id="store">
+    <h2>Store</h2>
+    <p>Buy ranks and SMP Coins to enhance your in-game experience!</p>
+    <h3>Ranks</h3>
+    <ul>
+      <li>Mafia Rank - ₹699</li>
+      <li>Devil Rank - ₹499</li>
+      <li>President Rank - ₹399</li>
+      <li>Minister Rank - ₹249</li>
+      <li>Genius Rank - ₹60/month</li>
+      <li>Legend Rank - ₹30/month</li>
+    </ul>
+    <h3>SMP Coins</h3>
+    <ul>
+      <li>₹50 = 1200 Coins</li>
+      <li>₹100 = 2500 Coins</li>
+      <li>₹200 = 5500 Coins</li>
+      <li>₹400 = 12000 Coins</li>
+    </ul>
+    <p>Join our <a href="https://discord.gg/72FU8cXKzg" style="color: #FFD700;">Discord Support Server</a> to purchase via ticket system.</p>
+  </div>  <div class="section" id="faq">
+    <h2>FAQs</h2>
+    <ol>
+      <li>Is the server cracked or premium? — Cracked supported.</li>
+      <li>How to join from Bedrock? — Use IP & Port mentioned in Discord.</li>
+      <li>Can I apply for staff? — Yes, through Staff Apply section.</li>
+      <li>Is PVP allowed? — Yes, in PvP zones.</li>
+      <li>Is griefing allowed? — No, it's bannable.</li>
+      <li>Are there giveaways? — Weekly giveaways in Discord!</li>
+      <li>What’s the SMP version? — 1.21+ supported.</li>
+      <li>Can I earn free coins? — Yes, by participating in events.</li>
+      <li>Is AFK farming allowed? — Limited allowed, auto banned on abuse.</li>
+      <li>Is there a YouTube rank? — Yes, for content creators.</li>
+      <li>Is there land protection? — Yes, claim system enabled.</li>
+      <li>Is the server lag-free? — 24/7 lag-free hosting guaranteed.</li>
+      <li>Where can I buy ranks? — In the Store section above.</li>
+      <li>Are there regular updates? — Yes, server is always evolving!</li>
+      <li>Is Bedrock chat synced with Java? — Yes!</li>
+      <li>Can I set homes? — Based on your rank tier.</li>
+      <li>What is Auction House? — Trade items with others.</li>
+      <li>How to contact staff? — Open a ticket in Discord.</li>
+      <li>Can I suggest features? — Yes, use #suggestions in Discord.</li>
+      <li>Is the server safe? — 100% trusted with active moderation.</li>
+    </ol>
+  </div>  <div class="section" id="support">
+    <h2>Support</h2>
+    <p>Need help? Join our official support server below and create a ticket.</p>
+    <a href="https://discord.gg/72FU8cXKzg" style="color: #00FFFF;">FOCUS MC DISCORD SUPPORT</a>
+  </div>  <div class="section" id="staffapply">
+    <h2>Staff Apply</h2>
+    <p>Think you have what it takes? Join our Discord and create a ticket to apply!</p>
+    <a href="https://discord.gg/72FU8cXKzg" style="color: #FFD700;">Apply Here</a>
+  </div>  <div class="section" id="events">
+    <h2>Events</h2>
+    <p>Coming Soon! Get ready for weekly custom events and big rewards!</p>
+  </div>  <div class="section" id="leaderboard">
+    <h2>Leaderboard</h2>
+    <p>Coming Soon! Compete and climb the leaderboard based on kills, balance, and more!</p>
+  </div>  <footer>
+    <p>© 2025 FocusMC SMP | Developed by SniperFamily</p>
+  </footer>
+</body>
 </html>
