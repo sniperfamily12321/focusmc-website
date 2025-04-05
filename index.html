@@ -1,175 +1,206 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Focus MC - Official Website</title>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet">
   <style>
-    * {
+    body, html {
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+      overflow-x: hidden;
+      background-color: #000;
+      color: #00ffcc;
     }
-    body {
-      font-family: 'Orbitron', sans-serif;
-      background: url('https://wallpapercave.com/wp/wp5128415.jpg') no-repeat center center fixed;
-      background-size: cover;
-      color: #fff;
+
+    canvas#bgCanvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      width: 100vw;
       height: 100vh;
-      display: flex;
-      flex-direction: column;
     }
-    header {
-      background-color: rgba(0, 0, 0, 0.7);
-      padding: 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      position: relative;
-      z-index: 1000;
-    }
-    header h1 {
-      font-size: 2.5em;
-      color: #00ffe1;
-    }
-    nav ul {
-      list-style-type: none;
-      display: flex;
-      gap: 15px;
-    }
-    nav a {
-      color: #00ffe1;
-      text-decoration: none;
-      font-size: 1em;
-      padding: 8px 12px;
-      border-radius: 5px;
-      transition: 0.3s ease-in-out;
-    }
-    nav a:hover {
-      background-color: #00ffe1;
-      color: #000;
-      box-shadow: 0 0 10px #00ffe1;
-    }
-    main {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
+
+    h1, h2, h3 {
       text-align: center;
-      padding: 30px;
+      margin-top: 20px;
     }
-    .highlight {
-      background-color: rgba(0, 0, 0, 0.6);
+
+    .center-box {
+      background: #1b1b1bdd;
       padding: 20px;
       border-radius: 10px;
-      box-shadow: 0 0 20px #00ffe1;
-      margin-bottom: 30px;
-      width: 90%;
-      max-width: 600px;
-      transition: transform 0.3s;
+      margin: 20px auto;
+      max-width: 700px;
+      box-shadow: 0 0 10px #00ffcc44;
     }
-    .highlight:hover {
-      transform: scale(1.03);
-    }
-    .highlight h2 {
-      font-size: 2em;
-      color: #00ffe1;
-      margin-bottom: 15px;
-    }
-    .highlight p {
-      font-size: 1.2em;
-      line-height: 1.6;
-      color: #ccc;
-    }
-    footer {
-      background-color: rgba(0, 0, 0, 0.7);
-      text-align: center;
-      padding: 10px;
-      font-size: 0.9em;
-    }
-    .menu-toggle {
-      display: none;
-      flex-direction: column;
+
+    .btn {
+      background-color: #00ffcc;
+      color: #000;
+      padding: 12px 20px;
+      margin: 10px;
+      border: none;
+      border-radius: 30px;
+      font-size: 16px;
+      font-weight: bold;
       cursor: pointer;
+      display: block;
+      width: fit-content;
+      text-align: center;
+      margin-left: auto;
+      margin-right: auto;
+      text-decoration: none;
     }
-    .bar {
-      height: 4px;
-      width: 25px;
-      background-color: #00ffe1;
-      margin: 4px 0;
-      transition: 0.4s;
+
+    .faq, .rules {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+      background: #1a1a1add;
+      border-radius: 10px;
     }
-    @media (max-width: 768px) {
-      nav ul {
-        display: none;
-        flex-direction: column;
-        background-color: rgba(0, 0, 0, 0.95);
-        position: absolute;
-        right: 20px;
-        top: 70px;
-        padding: 20px;
-        border-radius: 10px;
-      }
-      nav ul.active {
-        display: flex;
-      }
-      .menu-toggle {
-        display: flex;
-      }
+
+    details {
+      margin-bottom: 10px;
+      border: 1px solid #00ffcc44;
+      border-radius: 5px;
+      padding: 10px;
+      background: #121212cc;
+    }
+
+    summary {
+      font-weight: bold;
+      cursor: pointer;
+      color: #00ffee;
+    }
+
+    ul {
+      list-style-type: none;
+      padding-left: 20px;
+    }
+
+    ul li::before {
+      content: "• ";
+      color: #00ffee;
+    }
+
+    .countdown-box {
+      background-color: #222;
+      text-align: center;
+      font-size: 28px;
+      font-weight: bold;
+      padding: 30px;
+      margin: 30px auto;
+      max-width: 500px;
+      border-radius: 10px;
+      color: #00ffee;
+      box-shadow: 0 0 20px #00ffcc55;
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Focus MC</h1>
-    <div class="menu-toggle" onclick="toggleMenu()">
-      <div class="bar"></div>
-      <div class="bar"></div>
-      <div class="bar"></div>
-    </div>
-    <nav>
-      <ul id="nav-menu">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="Store.html">Store</a></li>
-        <li><a href="about.html">About Us</a></li>
-        <li><a href="leaderboards.html">Leaderboards</a></li>
-        <li><a href="events.html">Events</a></li>
-        <li><a href="staff.html">Staff</a></li>
-        <li><a href="rules.html">Rules</a></li>
-        <li><a href="support.html">Support</a></li>
-        <li><a href="apply.html">Apply</a></li>
-        <li><a href="faq.html">FAQ</a></li>
-      </ul>
-    </nav>
-  </header>
 
-  <main>
-    <div class="highlight">
-      <h2>Lag Free SMP</h2>
-      <p>Experience smooth gameplay without lag. Designed for serious players who want performance!</p>
-    </div>
-    <div class="highlight">
-      <h2>24x7 Active Staff</h2>
-      <p>Best customer support with instant replies. Need help? We’re always online for you!</p>
-    </div>
-    <div class="highlight">
-      <h2>Not Pay To Win</h2>
-      <p>FocusMC is <strong>Play to Win</strong>. Skill matters here, not your wallet. Fair gameplay guaranteed!</p>
-    </div>
-    <a href="https://discord.gg/su9qyNQWKb" target="_blank" style="margin-top: 20px; color: #00ffe1; font-size: 1.3em; text-decoration: underline;">Join Our Discord</a>
-  </main>
+<canvas id="bgCanvas"></canvas>
 
-  <footer>
-    &copy; 2025 FocusMC | Developed with love for Minecraft players
-  </footer>
+  <h1>Welcome to FOCUS MC</h1>
+  <h3>The Ultimate Minecraft SMP Experience</h3>
 
-  <script>
-    function toggleMenu() {
-      const menu = document.getElementById("nav-menu");
-      menu.classList.toggle("active");
+  <div class="countdown-box">
+    Revealing Soon...
+  </div>
+
+  <div class="center-box">
+    <h3>Server IP:</h3>
+    <p style="font-size: 20px;">Under Construction...</p>
+    <p>Version: <strong>1.21+</strong> | Support: <strong>Java + Bedrock (PE)</strong></p>
+  </div>
+
+  <div class="center-box">
+    <h2>Discord Servers</h2>
+    <a class="btn" href="https://discord.gg/yourserver">Join Official Discord</a>
+    <a class="btn" href="https://discord.gg/support">Join Support Server</a>
+  </div>
+
+  <div class="center-box">
+    <h2>What's Coming</h2>
+    <ul>
+      <li>⚡ Website Store - Coming Soon</li>
+      <li>🛡️ Powerful Anti-Cheat</li>
+      <li>🎉 Events, Duels, Leaderboards</li>
+      <li>⛏️ Survival & Mini-Games</li>
+      <li>✨ Full Crossplay Support</li>
+      <li>🏆 Play to Win Experience</li>
+    </ul>
+  </div>
+
+  <div class="center-box">
+    <h2>Staff Apply</h2>
+    <p>Want to join the team? Click below, join our Discord, and create a ticket in <strong>#staff-apply</strong> channel!</p>
+    <a class="btn" href="https://discord.gg/yourserver">Apply via Discord</a>
+  </div>
+
+  <div class="rules">
+    <h2>Server Rules</h2>
+    <ul>
+      <li>No cheating, hacking, or exploiting bugs</li>
+      <li>Respect all players and staff</li>
+      <li>No spamming or advertising</li>
+      <li>Use appropriate language</li>
+      <li>Do not grief or steal from others</li>
+      <li>Follow staff instructions at all times</li>
+      <li>No unfair teaming in solo events</li>
+      <li>Report issues or bugs via support ticket</li>
+    </ul>
+  </div>
+
+  <div class="faq">
+    <h2>Frequently Asked Questions (FAQ)</h2>
+
+    <!-- Keep your 20 FAQs here as before (not repeating to save space) -->
+
+  </div>
+
+<script>
+  const canvas = document.getElementById("bgCanvas");
+  const ctx = canvas.getContext("2d");
+
+  canvas.height = window.innerHeight;
+  canvas.width = window.innerWidth;
+
+  const matrix = "01";
+  const font_size = 16;
+  const columns = canvas.width / font_size;
+  const drops = Array.from({ length: columns }).fill(1);
+
+  function drawMatrix() {
+    ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+    ctx.fillStyle = "#00ffcc";
+    ctx.font = font_size + "px monospace";
+
+    for (let i = 0; i < drops.length; i++) {
+      const text = matrix[Math.floor(Math.random() * matrix.length)];
+      ctx.fillText(text, i * font_size, drops[i] * font_size);
+
+      if (drops[i] * font_size > canvas.height && Math.random() > 0.975) {
+        drops[i] = 0;
+      }
+
+      drops[i]++;
     }
-  </script>
+  }
+
+  setInterval(drawMatrix, 33);
+
+  window.addEventListener("resize", () => {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+  });
+</script>
+
 </body>
 </html>
