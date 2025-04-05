@@ -1,106 +1,157 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Focus MC - Official Website</title>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet">
   <style>
-    body {
+    * {
       margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
       font-family: 'Orbitron', sans-serif;
+      background: url('https://wallpapercave.com/wp/wp5128415.jpg') no-repeat center center fixed;
+      background-size: cover;
       color: #fff;
-      background: linear-gradient(135deg, #0f0f0f, #1a1a1a);
-      background-attachment: fixed;
-      overflow-x: hidden;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
     }
     header {
-      text-align: center;
-      padding: 60px 20px 20px;
-    }
-    h1 {
-      font-size: 3em;
-      background: linear-gradient(to right, #00ffc8, #00ff94);
-      -webkit-background-clip: text;
-      color: transparent;
-    }
-    .info {
-      max-width: 900px;
-      margin: auto;
+      background-color: rgba(0, 0, 0, 0.7);
       padding: 20px;
-      background: #111;
-      border-radius: 10px;
-      margin-top: 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
-    .info h2 {
-      color: #00ffb3;
+    header h1 {
+      font-size: 2.5em;
+      color: #00ffe1;
     }
-    .btn {
-      display: inline-block;
-      margin: 15px 10px;
-      padding: 12px 24px;
-      border-radius: 30px;
+    nav ul {
+      list-style-type: none;
+      display: flex;
+      gap: 20px;
+    }
+    nav a {
+      color: #00ffe1;
       text-decoration: none;
-      color: white;
-      background-color: #00ffb3;
-      transition: 0.3s ease;
+      font-size: 1em;
+      transition: 0.3s;
     }
-    .btn:hover {
-      background-color: #00b386;
+    nav a:hover {
+      color: #fff;
+      text-shadow: 0 0 10px #00ffe1;
+    }
+    main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 30px;
+    }
+    .highlight {
+      background-color: rgba(0, 0, 0, 0.6);
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 20px #00ffe1;
+      margin-bottom: 30px;
+    }
+    .highlight h2 {
+      font-size: 2em;
+      color: #00ffe1;
+      margin-bottom: 15px;
+    }
+    .highlight p {
+      font-size: 1.2em;
+      line-height: 1.6;
+      color: #ccc;
     }
     footer {
+      background-color: rgba(0, 0, 0, 0.7);
       text-align: center;
-      margin-top: 60px;
-      padding: 20px;
+      padding: 10px;
       font-size: 0.9em;
-      color: #aaa;
     }
-    .ip-box {
-      background-color: #222;
-      padding: 20px;
-      border-radius: 8px;
-      text-align: center;
-      margin: 20px 0;
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
     }
-    .ip-box strong {
-      font-size: 1.5em;
-      color: #00ffc8;
+    .bar {
+      height: 4px;
+      width: 25px;
+      background-color: #00ffe1;
+      margin: 4px 0;
+      transition: 0.4s;
     }
-    @media (max-width: 600px) {
-      h1 { font-size: 2em; }
-      .btn { padding: 10px 18px; }
+    @media (max-width: 768px) {
+      nav ul {
+        display: none;
+        flex-direction: column;
+        background-color: rgba(0, 0, 0, 0.9);
+        position: absolute;
+        right: 20px;
+        top: 70px;
+        padding: 20px;
+      }
+      nav ul.active {
+        display: flex;
+      }
+      .menu-toggle {
+        display: flex;
+      }
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>Welcome to FOCUS MC</h1>
-    <p>The Ultimate Minecraft SMP Experience</p>
-  </header>
-
-  <div class="info">
-    <div class="ip-box">
-      <p>Server IP:</p>
-      <strong>Under Construction...</strong>
-      <p>Version: 1.20+</p>
+    <h1>Focus MC</h1>
+    <div class="menu-toggle" onclick="toggleMenu()">
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
     </div>
-
-    <h2>Discord Servers</h2>
-    <a href="https://discord.gg/su9qyNQWKb" class="btn">Join Official Discord</a>
-    <a href="https://discord.gg/72FU8cXKzg" class="btn">Join Support Server</a>
-
-    <h2>What's Coming</h2>
-    <ul>
-      <li>⚡ Website Store - Coming Soon</li>
-      <li>🛡️ Powerful Anti-Cheat</li>
-      <li>🎉 Events, Duels, Leaderboards</li>
-      <li>⛏️ Survival & Mini-Games</li>
-      <li>✨ Full Crossplay Support</li>
-    </ul>
-  </div>
-
+    <nav>
+      <ul id="nav-menu">
+        <li><a href="under-construction.html">Home</a></li>
+        <li><a href="under-construction.html">Store</a></li>
+        <li><a href="under-construction.html">About Us</a></li>
+        <li><a href="under-construction.html">Leaderboards</a></li>
+        <li><a href="under-construction.html">Events</a></li>
+        <li><a href="under-construction.html">Staff</a></li>
+        <li><a href="under-construction.html">Rules</a></li>
+        <li><a href="under-construction.html">Support</a></li>
+        <li><a href="under-construction.html">Apply</a></li>
+        <li><a href="under-construction.html">FAQ</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <div class="highlight">
+      <h2>Lag Free SMP</h2>
+      <p>Experience smooth gameplay without lag. Designed for serious players who want performance!</p>
+    </div>
+    <div class="highlight">
+      <h2>24x7 Active Staff</h2>
+      <p>Best customer support with instant replies. Need help? We’re always online for you!</p>
+    </div>
+    <div class="highlight">
+      <h2>Not Pay To Win</h2>
+      <p>FocusMC is <strong>Play to Win</strong>. Skill matters here, not your wallet. Fair gameplay guaranteed!</p>
+    </div>
+    <a href="https://discord.gg/su9qyNQWKb" target="_blank" style="margin-top: 20px; color: #00ffe1; font-size: 1.3em; text-decoration: underline;">Join Our Discord</a>
+  </main>
   <footer>
-    © 2025 Focus MC | All rights reserved.
-  </footer>
-</body>
+    &copy; 2025 FocusMC | Developed with love for Minecraft players
+  </footer>  <script>
+    function toggleMenu() {
+      const menu = document.getElementById("nav-menu");
+      menu.classList.toggle("active");
+    }
+  </script></body>
 </html>
