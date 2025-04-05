@@ -1,198 +1,175 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Focus MC - Official Website</title>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet">
   <style>
-    body {
+    * {
       margin: 0;
-      font-family: 'Orbitron', sans-serif;
-      background-color: #000;
-      color: #00ffcc;
+      padding: 0;
+      box-sizing: border-box;
     }
-
+    body {
+      font-family: 'Orbitron', sans-serif;
+      background: url('https://wallpapercave.com/wp/wp5128415.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: #fff;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
     header {
-      background-color: #0d0d0d;
-      padding: 10px 20px;
+      background-color: rgba(0, 0, 0, 0.7);
+      padding: 20px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      position: sticky;
-      top: 0;
+      position: relative;
       z-index: 1000;
     }
-
-    .logo {
-      font-size: 1.5em;
-      font-weight: bold;
+    header h1 {
+      font-size: 2.5em;
+      color: #00ffe1;
     }
-
     nav ul {
-      list-style: none;
+      list-style-type: none;
       display: flex;
-      gap: 20px;
+      gap: 15px;
     }
-
-    nav ul li a {
+    nav a {
+      color: #00ffe1;
       text-decoration: none;
-      color: #00ffcc;
       font-size: 1em;
+      padding: 8px 12px;
+      border-radius: 5px;
+      transition: 0.3s ease-in-out;
     }
-
-    .hamburger {
+    nav a:hover {
+      background-color: #00ffe1;
+      color: #000;
+      box-shadow: 0 0 10px #00ffe1;
+    }
+    main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 30px;
+    }
+    .highlight {
+      background-color: rgba(0, 0, 0, 0.6);
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 20px #00ffe1;
+      margin-bottom: 30px;
+      width: 90%;
+      max-width: 600px;
+      transition: transform 0.3s;
+    }
+    .highlight:hover {
+      transform: scale(1.03);
+    }
+    .highlight h2 {
+      font-size: 2em;
+      color: #00ffe1;
+      margin-bottom: 15px;
+    }
+    .highlight p {
+      font-size: 1.2em;
+      line-height: 1.6;
+      color: #ccc;
+    }
+    footer {
+      background-color: rgba(0, 0, 0, 0.7);
+      text-align: center;
+      padding: 10px;
+      font-size: 0.9em;
+    }
+    .menu-toggle {
       display: none;
-      font-size: 28px;
+      flex-direction: column;
       cursor: pointer;
     }
-
-    #toggle-menu {
-      display: none;
+    .bar {
+      height: 4px;
+      width: 25px;
+      background-color: #00ffe1;
+      margin: 4px 0;
+      transition: 0.4s;
     }
-
     @media (max-width: 768px) {
       nav ul {
         display: none;
+        flex-direction: column;
+        background-color: rgba(0, 0, 0, 0.95);
         position: absolute;
         right: 20px;
-        top: 60px;
-        flex-direction: column;
-        background: #111;
-        padding: 10px;
+        top: 70px;
+        padding: 20px;
         border-radius: 10px;
       }
-
-      #toggle-menu:checked ~ nav ul {
+      nav ul.active {
         display: flex;
       }
-
-      .hamburger {
-        display: block;
+      .menu-toggle {
+        display: flex;
       }
-    }
-
-    .container {
-      text-align: center;
-      padding: 50px 20px;
-    }
-
-    h1 {
-      font-size: 2.5em;
-      color: #00ffcc;
-      text-shadow: 0 0 10px #00ffcc;
-    }
-
-    .subtitle {
-      font-size: 1.2em;
-      color: #ccc;
-      margin-top: -10px;
-    }
-
-    .server-box {
-      background-color: #111;
-      padding: 20px;
-      margin: 30px auto;
-      border-radius: 10px;
-      max-width: 500px;
-      color: #fff;
-    }
-
-    .server-box h2 {
-      font-size: 1.5em;
-      color: #00ffcc;
-    }
-
-    .buttons {
-      margin: 20px;
-    }
-
-    .buttons a {
-      display: inline-block;
-      background-color: #00ffcc;
-      color: #000;
-      padding: 10px 20px;
-      margin: 10px;
-      border-radius: 30px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: 0.3s;
-    }
-
-    .buttons a:hover {
-      background-color: #00ffaa;
-      transform: scale(1.05);
-    }
-
-    .features {
-      margin-top: 40px;
-      max-width: 600px;
-      margin-left: auto;
-      margin-right: auto;
-      text-align: left;
-    }
-
-    .features li {
-      margin: 10px 0;
-      font-size: 1em;
-      color: #ccc;
-    }
-
-    footer {
-      margin-top: 60px;
-      padding: 20px;
-      background-color: #111;
-      color: #555;
-      font-size: 0.9em;
-      text-align: center;
     }
   </style>
 </head>
 <body>
-
   <header>
-    <div class="logo">FOCUS MC</div>
-    <label for="toggle-menu" class="hamburger">&#9776;</label>
-    <input type="checkbox" id="toggle-menu" />
+    <h1>Focus MC</h1>
+    <div class="menu-toggle" onclick="toggleMenu()">
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+    </div>
     <nav>
-      <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Store</a></li>
-        <li><a href="#">Discord</a></li>
-        <li><a href="#">Contact</a></li>
+      <ul id="nav-menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="Store.html">Store</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="leaderboards.html">Leaderboards</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="staff.html">Staff</a></li>
+        <li><a href="rules.html">Rules</a></li>
+        <li><a href="support.html">Support</a></li>
+        <li><a href="apply.html">Apply</a></li>
+        <li><a href="faq.html">FAQ</a></li>
       </ul>
     </nav>
   </header>
 
-  <div class="container">
-    <h1>Welcome to FOCUS MC</h1>
-    <p class="subtitle">The Ultimate Minecraft SMP Experience</p>
-
-    <div class="server-box">
-      <h2>Server IP:</h2>
-      <p>Under Construction...</p>
-      <p>Version: 1.20+</p>
+  <main>
+    <div class="highlight">
+      <h2>Lag Free SMP</h2>
+      <p>Experience smooth gameplay without lag. Designed for serious players who want performance!</p>
     </div>
-
-    <h2>Discord Servers</h2>
-    <div class="buttons">
-      <a href="#">Join Official Discord</a>
-      <a href="#">Join Support Server</a>
+    <div class="highlight">
+      <h2>24x7 Active Staff</h2>
+      <p>Best customer support with instant replies. Need help? We’re always online for you!</p>
     </div>
-
-    <h2>What's Coming</h2>
-    <ul class="features">
-      <li>⚡ Website Store - Coming Soon</li>
-      <li>🛡️ Powerful Anti-Cheat</li>
-      <li>🎉 Events, Duels, Leaderboards</li>
-      <li>⛏️ Survival & Mini-Games</li>
-      <li>✨ Full Crossplay Support</li>
-    </ul>
-  </div>
+    <div class="highlight">
+      <h2>Not Pay To Win</h2>
+      <p>FocusMC is <strong>Play to Win</strong>. Skill matters here, not your wallet. Fair gameplay guaranteed!</p>
+    </div>
+    <a href="https://discord.gg/su9qyNQWKb" target="_blank" style="margin-top: 20px; color: #00ffe1; font-size: 1.3em; text-decoration: underline;">Join Our Discord</a>
+  </main>
 
   <footer>
-    © 2025 Focus MC | Powered by Sniper Family | All Rights Reserved
+    &copy; 2025 FocusMC | Developed with love for Minecraft players
   </footer>
 
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById("nav-menu");
+      menu.classList.toggle("active");
+    }
+  </script>
 </body>
 </html>
