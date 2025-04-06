@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Apply for Staff | Focus MC</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: url('background.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: white;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 60px auto;
+      padding: 30px;
+      background: rgba(0, 0, 0, 0.8);
+      border-radius: 15px;
+      box-shadow: 0 0 20px #00ffcc;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #00ffcc;
+    }
+
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 12px;
+      margin-top: 6px;
+      border-radius: 10px;
+      border: none;
+      outline: none;
+    }
+
+    textarea {
+      resize: vertical;
+    }
+
+    button {
+      width: 100%;
+      margin-top: 20px;
+      padding: 12px;
+      background: #00ffcc;
+      color: black;
+      font-weight: bold;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background: #00ffaa;
+    }
+
+    .discord {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 15px;
+    }
+
+    .discord a {
+      color: #00ffcc;
+      text-decoration: none;
+    }
+
+    .discord a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Apply for Staff</h2>
+    <form action="https://formspree.io/f/mwkgoaqz" method="POST">
+      <label for="username">Minecraft/Discord Username</label>
+      <input type="text" id="username" name="username" required />
+
+      <label for="age">Your Age</label>
+      <input type="number" id="age" name="age" required />
+
+      <label for="experience">Do you have any experience as staff?</label>
+      <textarea id="experience" name="experience" rows="4" required></textarea>
+
+      <label for="reason">Why should we choose you?</label>
+      <textarea id="reason" name="reason" rows="4" required></textarea>
+
+      <label for="availability">How many hours can you dedicate daily?</label>
+      <input type="text" id="availability" name="availability" required />
+
+      <button type="submit">Submit Application</button>
+    </form>
+
+    <div class="discord">
+      Need Help? Join our <a href="https://discord.gg/72FU8cXKzg" target="_blank">Support Discord Server</a>
+    </div>
+  </div>
+</body>
+</html>
