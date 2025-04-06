@@ -1,128 +1,111 @@
 <!DOCTYPE html><html lang="en"><head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>FOCUS MC - Minecraft Server</title>
-  <link rel="stylesheet" href="style.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Focus MC - Official Website</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet">
   <style>
-    body {
+    * {
       margin: 0;
+      padding: 0;
+      box-sizing: border-box;
       font-family: 'Orbitron', sans-serif;
-      color: white;
-      background: url('background.png') no-repeat center center fixed;
-      background-size: cover;
-      overflow-x: hidden;
-    }nav {
-  background-color: rgba(0, 0, 0, 0.7);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 2rem;
-}
-
-nav h1 {
-  font-size: 2rem;
-  color: lime;
-}
-
-.menu {
-  display: flex;
-  gap: 1rem;
-}
-
-.menu a {
-  color: white;
-  text-decoration: none;
-  padding: 0.5rem 1rem;
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 5px;
-}
-
-.menu a:hover {
-  background: lime;
-  color: black;
-}
-
-.section {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+    }body {
+  background-image: url("background.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  color: #00ffcc;
   text-align: center;
   padding: 2rem;
 }
 
-.hidden {
-  display: none;
+header {
+  background: rgba(0, 0, 0, 0.75);
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 0 25px #00ffcc;
+  margin-bottom: 2rem;
 }
 
-button {
-  margin-top: 2rem;
-  padding: 1rem 2rem;
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+p {
   font-size: 1.2rem;
-  background: lime;
-  color: black;
+  color: #ffffffbb;
+}
+
+.info-box {
+  margin: 2rem auto;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 1.5rem;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 500px;
+  box-shadow: 0 0 15px #00ffaa;
+}
+
+.discord-buttons button {
+  margin: 10px;
+  padding: 12px 25px;
   border: none;
+  border-radius: 30px;
+  background-color: #00ffaa;
+  color: black;
+  font-size: 1rem;
   cursor: pointer;
-  border-radius: 8px;
+  transition: 0.3s;
+}
+
+.discord-buttons button:hover {
+  background-color: #00ffcc;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 0.8rem 1rem;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  box-shadow: 0 0 10px #00ffaa;
+  z-index: 1000;
+}
+
+nav a {
+  color: #00ffaa;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.2s ease-in-out;
+}
+
+nav a:hover {
+  color: #ffffff;
 }
 
   </style>
 </head><body>
   <nav>
-    <h1>FOCUS MC</h1>
-    <div class="menu">
-      <a href="#" onclick="showSection('home')">Home</a>
-      <a href="#" onclick="showSection('shop')">Shop</a>
-      <a href="#" onclick="showSection('store')">Store</a>
-      <a href="#" onclick="showSection('about')">About Us</a>
-      <a href="#" onclick="showSection('leaderboard')">Leaderboard</a>
-      <a href="#" onclick="showSection('events')">Events</a>
-      <a href="#" onclick="showSection('staffapply')">Staff Apply</a>
-      <a href="#" onclick="showSection('rules')">Rules</a>
-      <a href="#" onclick="showSection('support')">Support</a>
-    </div>
-  </nav>  <div id="home" class="section">
-    <h2>Welcome to FOCUS MC</h2>
-    <p>The Ultimate Minecraft Java + PE SMP Server (1.21+)</p>
-    <p>Join the adventure. Play to Win. Become a legend.</p>
-    <button onclick="alert('Join our Discord to get started!')">Join Now</button>
-  </div>  <div id="shop" class="section hidden">
-    <h2>Shop</h2>
-    <p>Explore awesome ranks and SMP Coins packages!</p>
-  </div>  <div id="store" class="section hidden">
-    <h2>Store</h2>
-    <p>Details of Ranks and SMP Coin Packages are coming soon...</p>
-  </div>  <div id="about" class="section hidden">
-    <h2>About Us</h2>
-    <p>FOCUS MC is a powerful and friendly Minecraft SMP server for Java and PE, where fun meets fairness. We believe in a chill and competitive gaming experience where you can make friends, show your skills, and become the ultimate warrior!</p>
-  </div>  <div id="leaderboard" class="section hidden">
-    <h2>Leaderboard</h2>
-    <p>Coming Soon...</p>
-  </div>  <div id="events" class="section hidden">
-    <h2>Events</h2>
-    <p>Coming Soon...</p>
-  </div>  <div id="staffapply" class="section hidden">
-    <h2>Staff Apply</h2>
-    <p>Join our Discord server and make a ticket in #support to apply for staff. Good luck!</p>
-  </div>  <div id="rules" class="section hidden">
-    <h2>Rules</h2>
-    <ul>
-      <li>No hacking or cheating</li>
-      <li>Respect all players</li>
-      <li>No griefing or stealing</li>
-      <li>No spam or advertisement</li>
-      <li>Be kind and helpful</li>
-    </ul>
-  </div>  <div id="support" class="section hidden">
-    <h2>Support</h2>
-    <p>Join our official support Discord server:<br><a href="https://discord.gg/72FU8cXKzg" target="_blank">Click here to join support</a></p>
-  </div>  <script>
-    function showSection(id) {
-      document.querySelectorAll('.section').forEach(sec => sec.classList.add('hidden'));
-      document.getElementById(id).classList.remove('hidden');
-    }
-  </script></body></html>
+    <a href="#">Home</a>
+    <a href="shop.html">Shop</a>
+    <a href="leaderboard.html">Leaderboard</a>
+    <a href="events.html">Events</a>
+    <a href="apply.html">Staff Apply</a>
+    <a href="rules.html">Rules</a>
+    <a href="support.html">Support</a>
+  </nav>  <header>
+    <h1>Welcome to FOCUS MC</h1>
+    <p>The Ultimate Minecraft SMP Experience</p>
+  </header>  <div class="info-box">
+    <h2>Server IP:</h2>
+    <p>Under Construction...</p>
+    <p>Version: 1.20+</p>
+  </div>  <div class="discord-buttons">
+    <button onclick="window.location.href='https://discord.gg/yourserver'">Join Official Discord</button>
+    <button onclick="window.location.href='https://discord.gg/supportserver'">Join Support Server</button>
+  </div>
+</body></html>
