@@ -1,4 +1,5 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -13,8 +14,8 @@
     }
 
     body {
-      background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
-      overflow: hidden;
+      background: url('https://wallpapercave.com/wp/wp9728100.jpg') no-repeat center center fixed;
+      background-size: cover;
       color: #fff;
     }
 
@@ -24,6 +25,8 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      position: relative;
+      z-index: 2;
     }
 
     .logo {
@@ -32,22 +35,16 @@
     }
 
     nav {
-      display: none;
-      flex-direction: column;
-      background-color: rgba(0, 0, 0, 0.8);
-      position: absolute;
-      top: 80px;
-      right: 20px;
-      width: 200px;
-      border-radius: 10px;
-      z-index: 999;
+      display: flex;
+      gap: 20px;
     }
 
     nav a {
-      padding: 15px;
       text-decoration: none;
       color: #fff;
-      border-bottom: 1px solid #333;
+      padding: 10px 15px;
+      background-color: rgba(0, 0, 0, 0.4);
+      border-radius: 8px;
       transition: 0.3s;
     }
 
@@ -56,16 +53,9 @@
       color: #000;
     }
 
-    .menu-btn {
-      font-size: 28px;
-      cursor: pointer;
-    }
-
     .main {
       text-align: center;
       margin-top: 100px;
-      position: relative;
-      z-index: 2;
     }
 
     .main h1 {
@@ -75,7 +65,7 @@
     }
 
     .main p {
-      font-size: 22px;
+      font-size: 24px;
       margin-bottom: 30px;
     }
 
@@ -94,53 +84,31 @@
       transform: scale(1.1);
     }
 
+    #countdown {
+      font-size: 36px;
+      margin-top: 20px;
+      color: #00ffea;
+      text-shadow: 0 0 10px #00ffea;
+    }
+
     @keyframes glow {
       from {
-        text-shadow: 0 0 10px #00ffea, 0 0 20px #00ffea, 0 0 30px #00ffea;
+        text-shadow: 0 0 10px #00ffea, 0 0 20px #00ffea;
       }
       to {
-        text-shadow: 0 0 20px #0ff, 0 0 30px #0ff, 0 0 40px #0ff;
+        text-shadow: 0 0 20px #0ff, 0 0 30px #0ff;
       }
     }
 
-    canvas {
-      position: fixed;
-      top: 0;
-      left: 0;
-      pointer-events: none;
-      width: 100vw;
-      height: 100vh;
-      z-index: 0;
-    }
-
-    #stars {
-      position: fixed;
-      width: 100%;
-      height: 100%;
-      background: url('https://i.imgur.com/WC6L2oV.png') repeat;
-      animation: stars 60s linear infinite;
-      z-index: 0;
-    }
-
-    @keyframes stars {
-      from { background-position: 0 0; }
-      to { background-position: -10000px 5000px; }
+    audio {
+      display: none;
     }
   </style>
 </head>
 <body>
-  <div id="stars"></div>
-
-  <audio autoplay loop>
-    <source src="https://cdn.pixabay.com/download/audio/2023/03/10/audio_6b94dbd1e0.mp3?filename=future-glitch-intro-141789.mp3" type="audio/mpeg">
-  </audio>
-
-  <canvas id="fireworks"></canvas>
-
   <header>
     <div class="logo">FOCUS MC</div>
-    <div class="menu-btn" onclick="toggleMenu()">☰</div>
-    <nav id="nav-menu">
+    <nav>
       <a href="home.html">Home</a>
       <a href="store.html">Store</a>
       <a href="apply.html">Staff Apply</a>
@@ -152,121 +120,38 @@
   </header>
 
   <div class="main">
-    <h1 id="countdown-title">FOCUS SMP Launch In</h1>
-    <p id="countdown-text">Loading...</p>
-    <button class="btn" onclick="window.open('https://discord.gg/72FU8cXKzg','_blank')">Join Discord</button>
+    <h1>Welcome to FOCUS MC</h1>
+    <p>The Ultimate Minecraft SMP Experience Begins Soon!</p>
+    <div id="countdown">Loading launch countdown...</div>
+    <button class="btn" onclick="window.open('https://discord.gg/72FU8cXKzg','_blank')">Join Our Discord</button>
   </div>
 
+  <audio autoplay loop>
+    <source src="https://files.catbox.moe/20l8jk.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
   <script>
-    function toggleMenu() {
-      const menu = document.getElementById("nav-menu");
-      menu.style.display = menu.style.display === "flex" ? "none" : "flex";
-    }
+    // Countdown to 9 April 2025, 12:00 PM IST
+    const countdown = document.getElementById('countdown');
+    const launchDate = new Date("April 9, 2025 12:00:00 GMT+0530").getTime();
 
-    const title = document.getElementById("countdown-title");
-    const text = document.getElementById("countdown-text");
+    const x = setInterval(() => {
+      const now = new Date().getTime();
+      const distance = launchDate - now;
 
-    function updateCountdown() {
-      const launchDate = new Date("2025-04-09T06:30:00Z"); // 12 PM IST
-      const now = new Date();
-      const diff = launchDate - now;
+      if (distance < 0) {
+        clearInterval(x);
+        countdown.innerHTML = "FOCUS MC SMP IS NOW LIVE!";
+      } else {
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-      if (diff <= 0) {
-        title.textContent = "FOCUS SMP IS LIVE!";
-        text.textContent = "Hop into the adventure now!";
-        launchFireworks();
-        return;
+        countdown.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s LEFT`;
       }
-
-      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
-      const minutes = Math.floor((diff / 1000 / 60) % 60);
-      const seconds = Math.floor((diff / 1000) % 60);
-
-      text.textContent = `${days}d ${hours}h ${minutes}m ${seconds}s`;
-    }
-
-    setInterval(updateCountdown, 1000);
-    updateCountdown();
-
-    function launchFireworks() {
-      const canvas = document.getElementById("fireworks");
-      const ctx = canvas.getContext("2d");
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-
-      let fireworks = [];
-
-      function createFirework() {
-        return {
-          x: Math.random() * canvas.width,
-          y: canvas.height,
-          targetY: Math.random() * canvas.height / 2,
-          speed: 3 + Math.random() * 3,
-          radius: 2 + Math.random() * 2,
-          color: `hsl(${Math.random() * 360}, 100%, 60%)`
-        };
-      }
-
-      function animate() {
-        ctx.fillStyle = "rgba(0,0,0,0.2)";
-        ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-        for (let i = 0; i < fireworks.length; i++) {
-          let f = fireworks[i];
-          ctx.beginPath();
-          ctx.arc(f.x, f.y, f.radius, 0, 2 * Math.PI);
-          ctx.fillStyle = f.color;
-          ctx.fill();
-
-          f.y -= f.speed;
-
-          if (f.y < f.targetY) {
-            for (let j = 0; j < 30; j++) {
-              fireworks.push({
-                x: f.x,
-                y: f.y,
-                speedX: (Math.random() - 0.5) * 6,
-                speedY: (Math.random() - 0.5) * 6,
-                radius: 1 + Math.random() * 2,
-                color: f.color,
-                fade: 1
-              });
-            }
-            fireworks.splice(i, 1);
-            i--;
-          }
-        }
-
-        for (let i = 0; i < fireworks.length; i++) {
-          let f = fireworks[i];
-          if (f.fade !== undefined) {
-            f.x += f.speedX;
-            f.y += f.speedY;
-            f.fade -= 0.02;
-            ctx.globalAlpha = f.fade;
-            ctx.beginPath();
-            ctx.arc(f.x, f.y, f.radius, 0, 2 * Math.PI);
-            ctx.fillStyle = f.color;
-            ctx.fill();
-            ctx.globalAlpha = 1;
-
-            if (f.fade <= 0) {
-              fireworks.splice(i, 1);
-              i--;
-            }
-          }
-        }
-
-        requestAnimationFrame(animate);
-      }
-
-      setInterval(() => {
-        fireworks.push(createFirework());
-      }, 500);
-
-      animate();
-    }
+    }, 1000);
   </script>
 </body>
 </html>
