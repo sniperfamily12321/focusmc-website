@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Focus MC - Store</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet"/>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Orbitron', sans-serif;
+      background: url('background.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: #fff;
+    }
+
+    .header {
+      background-color: rgba(0, 0, 0, 0.7);
+      padding: 1rem;
+      text-align: center;
+      font-size: 2rem;
+      color: #00ffcc;
+    }
+
+    .store-section {
+      padding: 2rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .card {
+      background-color: rgba(0, 0, 0, 0.6);
+      border-radius: 10px;
+      padding: 1.5rem;
+      box-shadow: 0 0 15px #00ffff55;
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+    }
+
+    .rank-title {
+      font-size: 1.5rem;
+      color: #00ffcc;
+    }
+
+    .price {
+      color: #ffff00;
+      font-weight: bold;
+    }
+
+    .perks {
+      margin-top: 1rem;
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+
+    .footer {
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.9rem;
+      color: #ccc;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">FOCUS MC - RANK STORE</div>
+
+  <div class="store-section">
+    <div class="card">
+      <div class="rank-title">Mafia Rank</div>
+      <div class="price">₹699</div>
+      <div class="perks">
+        - Mafia Prefix<br/>
+        - 3500 Coins<br/>
+        - 15 Auction Listings<br/>
+        - 18 Homes
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="rank-title">Devil Rank</div>
+      <div class="price">₹499</div>
+      <div class="perks">
+        - Devil Prefix<br/>
+        - 2500 Coins<br/>
+        - 12 Auction Listings<br/>
+        - 15 Homes
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="rank-title">President Rank</div>
+      <div class="price">₹399</div>
+      <div class="perks">
+        - President Prefix<br/>
+        - 1000 Coins<br/>
+        - 10 Auction Listings<br/>
+        - 12 Homes
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="rank-title">Minister Rank</div>
+      <div class="price">₹249</div>
+      <div class="perks">
+        - Minister Prefix<br/>
+        - 600 Coins<br/>
+        - 8 Auction Listings<br/>
+        - 10 Homes
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="rank-title">Genius Rank</div>
+      <div class="price">₹60 / month</div>
+      <div class="perks">
+        - Genius Prefix<br/>
+        - 300 Coins<br/>
+        - 6 Auction Listings<br/>
+        - 3 Homes
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="rank-title">Legend Rank</div>
+      <div class="price">₹30 / month</div>
+      <div class="perks">
+        - Legend Prefix<br/>
+        - 150 Coins<br/>
+        - 4 Auction Listings
+      </div>
+    </div>
+  </div>
+
+  <div class="header">COINS TOP-UP</div>
+
+  <div class="store-section">
+    <div class="card">
+      <div class="rank-title">₹50 = 1200 Coins</div>
+    </div>
+    <div class="card">
+      <div class="rank-title">₹100 = 2500 Coins</div>
+    </div>
+    <div class="card">
+      <div class="rank-title">₹200 = 5500 Coins</div>
+    </div>
+    <div class="card">
+      <div class="rank-title">₹400 = 12000 Coins</div>
+    </div>
+  </div>
+
+  <div class="footer">
+    Buy from our Support Discord Server:<br/>
+    <a href="https://discord.gg/72FU8cXKzg" target="_blank" style="color:#00ffff;">Join Support Server</a><br/>
+    Create a ticket to buy safely! 24/7 Trusted Support.
+  </div>
+</body>
+</html>
